@@ -1,18 +1,21 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import Pokemons from "../../APIS/useRequestData";
 import { goToPokedex } from "../../routes/Coordinator";
+import useRequestData from "../../Hooks/useRequestData";
 
 const HomePage = () => {
     const history = useHistory()
-    const pokemons = Pokemons()
+    const pokemons= useRequestData('https://pokeapi.co/api/v2/pokemon?limit=20&offset=0',{})
+
     console.log(pokemons)
 
-    const pokemonArray = pokemons && pokemons.map((pokemon) => {
+    const pokemonArray = pokemons.results?.map((pokemon) => {
         return (
-            <div key={pokemon.id}>
-               <img src={pokemon.sprites.front_default} alt={pokemon.name}/>
+            <div key={pokemon.name}>
+               <img src={pokemon.sprites && pokemon.sprites.front_default} alt={pokemon.name && pokemon.name}/>
                 <p>{pokemon.name}</p>
+                <button>Adicionar</button>
+                <button>Detalhes</button>
             </div>
         )
     })
