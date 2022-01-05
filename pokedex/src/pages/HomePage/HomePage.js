@@ -1,22 +1,25 @@
 import React from "react";
+import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { goToPokedex } from "../../routes/Coordinator";
 import useRequestData from "../../Hooks/useRequestData";
+import CardPokemon from "../../components/CardPokemon";
 
 const HomePage = () => {
     const history = useHistory()
-    const pokemons= useRequestData('https://pokeapi.co/api/v2/pokemon?limit=20&offset=0',{})
+    const [data] = useRequestData({}, `https://pokeapi.co/api/v2/pokemon/`);
+    const [pokemonsIniciais, setPokemonsIniciais] = useState()
 
-    console.log(pokemons)
+    useEffect(() => {
+        setPokemonsIniciais(data.results)
+      }, [data])
 
-    const pokemonArray = pokemons.results?.map((pokemon) => {
+    const pokemonArray = pokemonsIniciais && pokemonsIniciais.map((pokemon) => {
         return (
-            <div key={pokemon.name}>
-               <img src={pokemon.sprites && pokemon.sprites.front_default} alt={pokemon.name && pokemon.name}/>
-                <p>{pokemon.name}</p>
-                <button>Adicionar</button>
-                <button>Detalhes</button>
-            </div>
+            <CardPokemon
+            key={pokemon.name}
+            pokename={pokemon.name}
+          />
         )
     })
 
