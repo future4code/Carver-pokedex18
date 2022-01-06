@@ -19,6 +19,9 @@ const HomePage = () => {
             <CardPokemon
             key={pokemon.name}
             pokename={pokemon.name}
+            name = {pokemon.name}
+            id = {pokemon.id}
+            
           />
         )
     })
