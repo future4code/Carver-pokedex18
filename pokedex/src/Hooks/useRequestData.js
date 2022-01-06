@@ -12,6 +12,7 @@ const useRequestData = (initialValue, url) => {
             })
             .catch((error) => {
                 console.log(error);
+                console.log('erro ao fazer requisição');
             });
     }, [url]);
 

@@ -15,7 +15,7 @@ function CardPokemon(props) {
      
       <div>
         <button>Adicionar</button>
-        <button onClick={() => goToDetail(history, props.id)}>Detalhes</button>
+        <button onClick={() => goToDetail(history, props.name)}>Detalhes</button>
         
        
       </div>
