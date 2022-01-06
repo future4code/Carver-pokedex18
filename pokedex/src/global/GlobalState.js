@@ -7,7 +7,6 @@ const GlobalState = (props) => {
     const addPokeToPokedex = (name) => {
         const newPokedex = [...pokedex, name]
         setPokedex(newPokedex)
-        alert(`${name} foi adicionado a Pokedéx`)
     } 
 
     const removePokeFromPokedex = (name) => {
