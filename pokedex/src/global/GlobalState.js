@@ -15,6 +15,7 @@ const GlobalState = (props) => {
             return pokemon.name !== name
         })
         setPokedex(newPokedex)
+        alert(`${name} foi removido da Pokedéx`)
     } 
 
     const states = { pokedex }

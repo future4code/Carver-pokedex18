@@ -6,24 +6,19 @@ import GlobalContext from "../global/GlobalContext";
 
 function CardPokemon(props) {
   const history = useHistory()
-  const {setters} = useContext(GlobalContext)
+  const { setters } = useContext(GlobalContext)
 
   const onClickAdd = () => {
     if(props.buttonChange === 'Adicionar a Pokedéx'){
-      setters.addPokeToPokedex(props.name)
-    } else {
-      setters.removePokeFromPokedex(props.name)
+      return setters.addPokeToPokedex(props.pokename)
     }
-    console.log(props.name)
   }
 
   return (
     <div>
       <PokeImagem name={props.pokename} />
-  
       <p>{props.name}</p>
       <p>{props.id}</p>
-     
       <div>
         <button onClick={onClickAdd}>{props.buttonChange}</button>
         <button onClick={() => goToDetail(history, props.name)}>Detalhes</button>
