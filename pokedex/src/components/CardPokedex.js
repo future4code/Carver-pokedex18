@@ -1,11 +1,9 @@
 import React, { useContext } from "react";
 import PokeImagem from "./ImagemPoke";
-import {goToDetail} from "../routes/Coordinator"
-import { useHistory } from "react-router-dom";
 import GlobalContext from "../global/GlobalContext";
+import PokemonDetailPage from "../pages/PokemonDetailPage/PokemonDetailPage";
 
 const CardPokedex = (props) => {
-    const history = useHistory()
     const { setters } = useContext(GlobalContext)
 
     const onClickRemove = () => {
@@ -15,11 +13,9 @@ const CardPokedex = (props) => {
     }
     
     return(
-        <div>
+        <div key={props.name}>
             <PokeImagem name={props.pokename} />
-            <p>{props.name}</p>
-            <p>{props.id}</p>
-
+            <p>{props.pokename}</p>
             <div>
                 <button onClick={onClickRemove}>{props.buttonChange}</button>
                 <button onClick={props.onClickDetail}>Detalhes</button>

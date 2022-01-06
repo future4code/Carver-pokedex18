@@ -10,11 +10,8 @@ const PokedexPage = (props) => {
 
     const pokemonsPokedex = states.pokedex.map((pokemon) => {
         return (
-            <CardPokedex
-            key={pokemon.name}
-            pokename={pokemon.name}
-            name = {pokemon.name}
-            id = {pokemon.id}
+            <CardPokedex key={pokemon}
+            pokename={pokemon}
             buttonChange = {'Remover da Pokedéx'}
             onClickDetail = {() => goToDetail(history, pokemon)}
           />

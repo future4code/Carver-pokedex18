@@ -12,10 +12,9 @@ const GlobalState = (props) => {
 
     const removePokeFromPokedex = (name) => {
         const newPokedex = pokedex.filter((pokemon)=>{
-            return pokemon.name !== name
+            return pokemon !== name
         })
         setPokedex(newPokedex)
-        alert(`${name} foi removido da Pokedéx`)
     } 
 
     const states = { pokedex }
