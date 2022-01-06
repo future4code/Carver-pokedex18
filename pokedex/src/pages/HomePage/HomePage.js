@@ -5,14 +5,14 @@ import { goToPokedex } from "../../routes/Coordinator";
 import useRequestData from "../../Hooks/useRequestData";
 import CardPokemon from "../../components/CardPokemon";
 
-const HomePage = () => {
+const HomePage = (props) => {
     const history = useHistory()
     const [data] = useRequestData({}, `https://pokeapi.co/api/v2/pokemon/`);
     const [pokemonsIniciais, setPokemonsIniciais] = useState()
 
     useEffect(() => {
         setPokemonsIniciais(data.results)
-      }, [data])
+    }, [data])
 
     const pokemonArray = pokemonsIniciais && pokemonsIniciais.map((pokemon) => {
         return (
@@ -21,7 +21,7 @@ const HomePage = () => {
             pokename={pokemon.name}
             name = {pokemon.name}
             id = {pokemon.id}
-            
+            buttonChange = {'Adicionar a Pokedéx'}
           />
         )
     })

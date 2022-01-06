@@ -2,7 +2,6 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { GET_POKEMON_NAME } from "../constants/Url";
 
-
 const PokeImagem = (props) => {
     const [pokeImg, setPokeImg] = useState([]);
 
