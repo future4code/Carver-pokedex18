@@ -19,7 +19,7 @@ function CardPokemon(props) {
     
       <div>
       <PokeImagem name={props.pokename} />
-           <p>{props.id}</p>
+           <p>{props.name}</p>
       
       <ButtonsContainer>
         <button onClick={onClickAdd}>{props.buttonChange}</button>
