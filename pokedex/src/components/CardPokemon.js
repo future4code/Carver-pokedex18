@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import PokeImagem from "./ImagemPoke";
 import {goToDetail} from "../routes/Coordinator"
 import GlobalContext from "../global/GlobalContext";
+import {PokeCardContainer, ImgContainer, PokeImg, ButtonsContainer} from "../components/StyledCardPokemon"
 
 function CardPokemon(props) {
   const history = useHistory()
@@ -15,16 +16,18 @@ function CardPokemon(props) {
   }
 
   return (
-    <div>
-      <PokeImagem name={props.pokename} />
-      <p>{props.name}</p>
-      <p>{props.id}</p>
+    
       <div>
+      <PokeImagem name={props.pokename} />
+           <p>{props.id}</p>
+      
+      <ButtonsContainer>
         <button onClick={onClickAdd}>{props.buttonChange}</button>
-        <button onClick={() => goToDetail(history, props.name)}>Detalhes</button>
+        <button onClick={() => goToDetail(history, props.name)}> Ver Detalhes</button>
+      </ButtonsContainer>
       </div>
-    </div>
   );
 }
 
 export default CardPokemon;
+

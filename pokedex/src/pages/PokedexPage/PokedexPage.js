@@ -4,17 +4,21 @@ import { goToDetail, goToHome } from "../../routes/Coordinator";
 import CardPokedex from "../../components/CardPokedex";
 import GlobalContext from "../../global/GlobalContext";
 
+
+
 const PokedexPage = (props) => {
     const history = useHistory()
     const { states } = useContext(GlobalContext)
 
     const pokemonsPokedex = states.pokedex.map((pokemon) => {
         return (
+     
             <CardPokedex key={pokemon}
             pokename={pokemon}
             buttonChange = {'Remover da Pokedéx'}
             onClickDetail = {() => goToDetail(history, pokemon)}
           />
+          
         )
     })
 

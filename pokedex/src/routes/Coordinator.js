@@ -9,3 +9,4 @@ export const goToPokedex = (history) => {
 export const goToDetail = (history, name) => {
     history.push(`/detail/${name}`)
 }
+

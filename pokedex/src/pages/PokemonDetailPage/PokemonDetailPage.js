@@ -4,6 +4,7 @@ import { goToHome, goToPokedex } from "../../routes/Coordinator";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
+
 const PokemonDetailPage = () => {
     const history = useHistory()
     const params = useParams()

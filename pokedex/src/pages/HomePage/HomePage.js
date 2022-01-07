@@ -1,10 +1,12 @@
 import React, { useContext } from "react";
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
-import { goToPokedex } from "../../routes/Coordinator";
+import { goToPokedex, goToHome } from "../../routes/Coordinator";
 import useRequestData from "../../Hooks/useRequestData";
 import CardPokemon from "../../components/CardPokemon";
 import GlobalContext from "../../global/GlobalContext";
+import Header from "../../constants/Header";
+
 
 const HomePage = (props) => {
     const history = useHistory()
@@ -31,10 +33,22 @@ const HomePage = (props) => {
     })
 
     return(
-        <div>
-            <button onClick={() => goToPokedex(history)}>Pokedex</button>
+              <div>
+              <Header
+        title={"Pokédex"}
+        leftButtonFunction={() => goToHome(history)}
+              />
+      
+             </div>,
+        
+        
+        <div>         
+        
+           <button onClick={() => goToPokedex(history)}>Ir para Pokedex</button>
+            
             <h1>POKELIST</h1>
             {pokemonArray}
+            
         </div>
     )
 }
