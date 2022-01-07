@@ -6,9 +6,9 @@ Status: Finalizado ✔️
 ### Dentro da Pokedex o usuário pode ver cada Pokemon que ele adicionou e também ser redirecionado à página de detalhes onde ele pode ver os detalhes de um Pokemon em particular.
 
 ### Essa aplicação possui:
-+ Uma página principal onde são exibidos a lista de pokemons;
++ Uma página principal onde é exibida a lista de pokemons;
 + Uma página de detalhes onde pode-se ver os detalhes de cada pokemon;
-+ Uma página da Pokedex que o usuário adicionou
++ Uma página da Pokedex onde se vê os pokemons que o usuário adicionou
 
 ### As tecnologias utilizadas nesse projeto foram 💻 :
 <table>
