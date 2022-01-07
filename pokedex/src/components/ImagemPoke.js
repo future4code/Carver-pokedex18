@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { GET_POKEMON_NAME } from "../constants/Url";
+import { ImgContainer, PokeImg, PokeCardContainer } from "./StyledCardPokemon";
 
 const PokeImagem = (props) => {
     const [pokeImg, setPokeImg] = useState([]);
@@ -20,7 +21,18 @@ const PokeImagem = (props) => {
         pegaPoke();
     }, [props.name]);
 
-    return <img src={pokeImg} alt={'imagem pokemon'}/>;
+    return (
+    
+    <PokeCardContainer>
+    <ImgContainer>
+    <PokeImg src={pokeImg} alt={'imagem pokemon'}/>
+    </ImgContainer>
+    </PokeCardContainer>
+    
+ 
+
+   
+    )
 };
 
 export default PokeImagem;
