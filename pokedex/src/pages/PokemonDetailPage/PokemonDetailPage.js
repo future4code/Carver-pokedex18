@@ -17,7 +17,6 @@ const PokemonDetailPage = () => {
         axios
             .get(url)
             .then((response) => {
-                console.log(response.data)
                 setPokemon(response.data)
                
             })
@@ -26,7 +25,7 @@ const PokemonDetailPage = () => {
                 console.log('erro ao fazer requisição');
             });
     }, [url]);
-    console.log('pokemon objeto inteiro', pokemon)
+    
 
 
 
