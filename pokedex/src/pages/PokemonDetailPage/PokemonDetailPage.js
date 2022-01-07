@@ -41,10 +41,6 @@ const PokemonDetailPage = () => {
             <p>{pokemon.moves && pokemon.moves[0].move.name && (<p>{pokemon.moves[0].move.name}</p>)}</p>
             <p>{pokemon.moves && pokemon.moves[1].move.name && (<p>{pokemon.moves[1].move.name}</p>)}</p>
             <p>{pokemon.moves && pokemon.moves[2].move.name && (<p>{pokemon.moves[2].move.name}</p>)}</p>
-            <h2>Abilities</h2>
-            <p>{pokemon.abilities && pokemon.abilities[0].ability.name && (<p>{pokemon.abilities[0].ability.name}</p>)}</p>
-            <p>{pokemon.abilities && pokemon.abilities[1].ability.name && (<p>{pokemon.abilities[1].ability.name}</p>)}</p>
-            <p>{pokemon.abilities && pokemon.abilities[2].ability.name && (<p>{pokemon.abilities[2].ability.name}</p>)}</p>
             <h2>Status</h2>
             <p>Attack:{pokemon.stats && pokemon.stats[0].base_stat && (<p>{pokemon.stats[0].base_stat}</p>)}</p>
             <p>Attack:{pokemon.stats && pokemon.stats[1].base_stat && (<p>{pokemon.stats[1].base_stat}</p>)}</p>
