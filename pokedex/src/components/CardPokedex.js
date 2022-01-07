@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import PokeImagem from "./ImagemPoke";
 import GlobalContext from "../global/GlobalContext";
-import PokemonDetailPage from "../pages/PokemonDetailPage/PokemonDetailPage";
-import { ButtonsContainer } from "./StyledCardPokemon";
+import { ButtonsContainer, TextCard, PokeCardContainer } from "./StyledCardPokemon";
+import {PokedexCardContainer} from "./StyledCardPokedex"
 
 const CardPokedex = (props) => {
     const { setters } = useContext(GlobalContext)
@@ -15,19 +15,18 @@ const CardPokedex = (props) => {
     
     return(
 
-       <div>                   
+       <PokedexCardContainer>                   
         <div key={props.name}/>
        
          
             <PokeImagem name={props.pokename}/>
             
        
-            <p>{props.pokename}</p>
             <ButtonsContainer>
                 <button onClick={onClickRemove}>{props.buttonChange}</button>
                 <button onClick={props.onClickDetail}>Detalhes</button>
             </ButtonsContainer>
-        </div>
+        </PokedexCardContainer>
     )
         
 }
